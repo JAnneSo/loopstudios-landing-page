@@ -521,7 +521,7 @@ main .creations .projects__card--hover:hover h3 {
 @media screen and (max-width: 650px) {
   main .creations .projects__card--hover {
     width: 90vw;
-    height: 16vh;
+    height: 30vh;
   }
 }
 
