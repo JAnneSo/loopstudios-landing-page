@@ -6,19 +6,45 @@ body {
   font-size: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 15px;
   font-weight: 400;
+  box-sizing: border-box;
+}
+
+body a {
+  cursor: pointer;
 }
 
 header {
-  background: url(../../images/desktop/image-hero.jpg) no-repeat center;
-  background-size: cover;
   width: 100%;
   height: 650px;
+  background: url(../../images/desktop/image-hero.jpg) no-repeat center;
+  background-size: cover;
+  background: filter();
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 60px 160px 100px 160px;
+}
+
+@media screen and (max-width: 650px) {
+  header {
+    background: url(../../images/mobile/image-hero.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+
+header .background_darker {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .header {
+  width: 1120px;
+  height: 500px;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,99 +55,79 @@ header {
 }
 
 @media screen and (max-width: 1130px) {
-  header {
-    padding: 60px 80px 80px 80px;
+  header .header {
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 650px) {
-  header {
-    padding: 30px 20px;
+  header .header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: url(../../images/mobile/image-hero.jpg) no-repeat;
-    background-size: cover;
   }
 }
 
-header .logo {
+header .header .logo {
   position: absolute;
-  top: 60px;
-  left: 160px;
-}
-
-@media screen and (max-width: 1130px) {
-  header .logo {
-    left: 80px;
-  }
+  top: 0px;
+  left: 0px;
 }
 
 @media screen and (max-width: 650px) {
-  header .logo {
+  header .header .logo {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
-    top: 40px;
-    left: 0px;
+    left: -28px;
     z-index: 2;
   }
 }
 
-header #hamburger {
+header .header #hamburger {
   display: none;
 }
 
 @media screen and (max-width: 1130px) {
-  header #hamburger {
+  header .header #hamburger {
     display: inline-block;
     width: 24px;
     height: 16px;
     position: absolute;
-    top: 65px;
-    right: 80px;
+    top: 10px;
+    right: 0px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  header #hamburger {
-    display: inline-block;
-    width: 24px;
-    height: 16px;
-    position: absolute;
-    top: 45px;
-    right: 20px;
+  header .header #hamburger {
+    top: 7px;
   }
 }
 
-header #close {
+header .header #close {
   display: none;
 }
 
 @media screen and (max-width: 1130px) {
-  header #close {
+  header .header #close {
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 65px;
-    right: 80px;
+    top: 10px;
+    right: 0px;
     display: none;
     z-index: 3;
   }
 }
 
 @media screen and (max-width: 650px) {
-  header #close {
+  header .header #close {
     display: none;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 45px;
-    right: 24px;
-    z-index: 3;
+    top: 7px;
   }
 }
 
-header .menu {
+header .header .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,18 +138,25 @@ header .menu {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  top: 60px;
-  right: 160px;
+  top: 0px;
+  right: 0px;
   list-style-type: none;
-  margin: 0px;
+}
+
+@media screen and (min-width: 1130px) {
+  header .header .menu {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
 }
 
 @media screen and (max-width: 1130px) {
-  header .menu {
-    right: 0px;
-    top: 0px;
+  header .header .menu {
+    position: fixed;
+    margin: 0px;
     width: 100%;
-    height: 100%;
+    height: 650px;
     padding: 60px 40px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -161,7 +174,7 @@ header .menu {
 }
 
 @media screen and (max-width: 650px) {
-  header .menu {
+  header .header .menu {
     display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -173,28 +186,23 @@ header .menu {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    position: absolute;
     padding: 0px 20px;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
     background-color: black;
     z-index: 1;
   }
 }
 
-header .menu li {
+header .header .menu li {
   margin-left: 40px;
 }
 
 @media screen and (max-width: 1130px) {
-  header .menu li {
+  header .header .menu li {
     margin: 20px;
   }
 }
 
-header .menu li a {
+header .header .menu li a {
   color: white;
   text-decoration: none;
   text-align: center;
@@ -202,7 +210,7 @@ header .menu li a {
   width: 100%;
 }
 
-header .menu li a::after {
+header .header .menu li a::after {
   content: "";
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   display: block;
@@ -212,21 +220,21 @@ header .menu li a::after {
   margin: 0px auto;
 }
 
-header .menu li a:hover::after {
+header .header .menu li a:hover::after {
   border-bottom: 2px solid white;
 }
 
 @media screen and (max-width: 1130px) {
-  header .menu li a {
-    font-family: 'Josefin Sans', sans-serif;
+  header .header .menu li a {
+    font-family: "Josefin Sans", sans-serif;
     text-transform: uppercase;
     font-weight: 300;
     font-size: 2em;
   }
 }
 
-header h1 {
-  font-family: 'Josefin Sans', sans-serif;
+header .header h1 {
+  font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 4em;
@@ -239,13 +247,13 @@ header h1 {
 }
 
 @media screen and (max-width: 1130px) {
-  header h1 {
+  header .header h1 {
     min-width: 550px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  header h1 {
+  header .header h1 {
     font-size: 2.8em;
     padding: 20px 20px;
     width: 350px;
@@ -270,7 +278,6 @@ main {
 @media screen and (max-width: 650px) {
   main {
     padding: 50px 0px;
-    width: 100%;
     margin: 0px;
   }
 }
@@ -292,7 +299,7 @@ main .mobile_img {
 }
 
 main h2 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 3em;
@@ -310,7 +317,7 @@ main h2 {
 main .introduction {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 560px;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
@@ -341,14 +348,12 @@ main .introduction {
 @media screen and (max-width: 650px) {
   main .introduction img {
     width: 90%;
-    height: auto;
-    margin: auto;
   }
 }
 
 main .introduction article {
   width: 450px;
-  padding: 100px;
+  padding: 50px 0px 50px 100px;
   padding-right: 0px;
   position: absolute;
   bottom: 0px;
@@ -470,7 +475,6 @@ main .creations .projects__card {
 @media screen and (max-width: 650px) {
   main .creations .projects__card {
     width: 90%;
-    height: auto;
     margin: 20px auto;
   }
 }
@@ -501,7 +505,7 @@ main .creations .projects__card--hover {
 }
 
 main .creations .projects__card--hover:hover {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 main .creations .projects__card--hover:hover h3 {
@@ -529,7 +533,7 @@ main .creations .projects__card h3 {
   padding: 40px;
   color: white;
   font-size: 2em;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   margin: 0px;
@@ -552,7 +556,7 @@ main .creations .projects__card h3 {
 }
 
 main .creations button {
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: black;
@@ -567,6 +571,7 @@ main .creations button {
   background-color: white;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1130px) {
@@ -590,7 +595,13 @@ main .creations button:hover {
 
 footer {
   background-color: black;
-  padding: 60px 160px 60px 160px;
+  padding: 60px 0px 10px;
+}
+
+footer .footer {
+  width: 1120px;
+  height: 114px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -600,20 +611,23 @@ footer {
 }
 
 @media screen and (max-width: 1130px) {
-  footer {
+  footer .footer {
     display: inherit;
     text-align: center;
-    padding: 20px;
+    width: 90%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 
 @media screen and (max-width: 650px) {
-  footer {
+  footer .footer {
     padding-top: 60px;
   }
 }
 
-footer .part1 .menu {
+footer .footer .part1 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -629,7 +643,7 @@ footer .part1 .menu {
 }
 
 @media screen and (max-width: 1130px) {
-  footer .part1 .menu {
+  footer .footer .part1 .menu {
     width: 80%;
     margin: 30px auto;
     -ms-flex-pack: distribute;
@@ -638,7 +652,7 @@ footer .part1 .menu {
 }
 
 @media screen and (max-width: 650px) {
-  footer .part1 .menu {
+  footer .footer .part1 .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -651,17 +665,17 @@ footer .part1 .menu {
   }
 }
 
-footer .part1 .menu li {
+footer .footer .part1 .menu li {
   margin: 10px 30px 10px 0px;
 }
 
 @media screen and (max-width: 650px) {
-  footer .part1 .menu li {
+  footer .footer .part1 .menu li {
     margin: 10px auto;
   }
 }
 
-footer .part1 .menu li a {
+footer .footer .part1 .menu li a {
   color: white;
   text-decoration: none;
   text-align: center;
@@ -669,7 +683,7 @@ footer .part1 .menu li a {
   width: 100%;
 }
 
-footer .part1 .menu li a::after {
+footer .footer .part1 .menu li a::after {
   content: "";
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   display: block;
@@ -679,17 +693,17 @@ footer .part1 .menu li a::after {
   margin: 0px auto;
 }
 
-footer .part1 .menu li a:hover::after {
+footer .footer .part1 .menu li a:hover::after {
   border-bottom: 2px solid white;
 }
 
 @media screen and (max-width: 650px) {
-  footer .part2 {
+  footer .footer .part2 {
     height: 100px;
   }
 }
 
-footer .part2 .networks {
+footer .footer .part2 .networks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -703,7 +717,7 @@ footer .part2 .networks {
 }
 
 @media screen and (max-width: 1130px) {
-  footer .part2 .networks {
+  footer .footer .part2 .networks {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -712,12 +726,12 @@ footer .part2 .networks {
 }
 
 @media screen and (max-width: 650px) {
-  footer .part2 .networks {
+  footer .footer .part2 .networks {
     margin-bottom: 0px;
   }
 }
 
-footer .part2 .networks a {
+footer .footer .part2 .networks a {
   display: inline-block;
   margin-left: 15px;
   padding-bottom: 5px;
@@ -725,34 +739,35 @@ footer .part2 .networks a {
 }
 
 @media screen and (max-width: 1130px) {
-  footer .part2 .networks a {
+  footer .footer .part2 .networks a {
     margin: 20px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  footer .part2 .networks a {
+  footer .footer .part2 .networks a {
     margin: 10px;
   }
 }
 
-footer .part2 .networks a:hover {
+footer .footer .part2 .networks a:hover {
   border-bottom: 2px solid white;
 }
 
-footer .part2 p {
+footer .footer .part2 p {
   color: #8c8c8c;
 }
 
-.attribution {
+footer .attribution {
   font-size: 11px;
   text-align: center;
   color: #8c8c8c;
   background-color: black;
   padding-bottom: 10px;
+  margin: 10px auto;
 }
 
-.attribution a {
+footer .attribution a {
   color: white;
 }
 /*# sourceMappingURL=style.css.map */
